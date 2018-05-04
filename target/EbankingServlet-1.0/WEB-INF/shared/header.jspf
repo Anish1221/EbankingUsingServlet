@@ -1,0 +1,35 @@
+
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
+
+<c:set var="SITE_URL" value="${pageContext.request.contextPath}"></c:set>
+
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">        
+
+        <!-- Latest compiled and minified CSS -->        
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
+
+        <!-- Optional theme -->
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap-theme.min.css" integrity="sha384-rHyoN1iRsVXV4nD0JutlnGaslCJuC7uwjduW9SVrLvRYooPp2bWYgmgJQIXwl/Sp" crossorigin="anonymous">
+
+        <style>
+            .footer{
+                position: initial;
+                bottom: 0;
+                width: 100%;
+                height: 30px;
+                background-color: #f5f5f5;
+            }
+        </style>
+
+        <title>E-Banking</title>
+
+    </head>
+    <body>
+        <div class="container-fluid">
+            <div class="page-header">
+                <a href="index"><img src="https://st2.depositphotos.com/8301258/11348/v/950/depositphotos_113483334-stock-illustration-law-court-bank-house-symbol.jpg" height="80px" width="80px" alt="E-Banking"/>E-BANKING</a>            
+            </div>
