@@ -17,6 +17,7 @@ public interface SystemDAO {
     Boolean checkByAccountNo(String accountNo, String table)throws ClassNotFoundException, SQLException;
     Boolean checkByUsername(String username)throws ClassNotFoundException, SQLException;
     String checkLogin(String username, String password)throws ClassNotFoundException, SQLException;
+    String checkSession(String username) throws ClassNotFoundException, SQLException;
     int getId() throws ClassNotFoundException, SQLException;
     int getBalance(String accountNo) throws ClassNotFoundException, SQLException;
     String generateAccount() throws ClassNotFoundException, SQLException;

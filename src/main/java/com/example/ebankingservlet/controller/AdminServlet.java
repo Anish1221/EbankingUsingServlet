@@ -20,16 +20,10 @@ import javax.servlet.http.HttpServletResponse;
 public class AdminServlet extends HttpServlet {
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {                     
+    protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
 
-        String uri = request.getRequestURI().toLowerCase();
-        String view = "admin_home.jsp";
-        if (uri.contains("/add")) {
-            view = "index.jsp";
-        } else {
-            request.getAttribute("username");
-        }
-        request.getRequestDispatcher("WEB-INF/views/admin/" + view).forward(request, resp);
+        request.getAttribute("username");
+        request.getRequestDispatcher("WEB-INF/views/admin/admin_home.jsp").forward(request, resp);
     }
 
 }

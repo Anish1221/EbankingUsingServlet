@@ -73,6 +73,24 @@ public class SystemDAOImpl implements SystemDAO {
         }
         return userRole;
     }
+    
+    @Override
+    public String checkSession(String username) throws ClassNotFoundException, SQLException {
+        String userRole = null;
+        db.open();
+        String sql = "SELECT username, user_role FROM tbl_admin WHERE username= ? UNION SELECT username, user_role FROM tbl_login WHERE username= ?";
+        PreparedStatement stmt = db.initStatement(sql);
+        stmt.setString(1, username);        
+        stmt.setString(2, username);        
+        ResultSet rs = stmt.executeQuery();
+        while (rs.next()) {
+            if (rs.getString("username").equalsIgnoreCase(username)) {
+                userRole = rs.getString("user_role");
+                break;
+            }
+        }
+        return userRole;
+    }
 
     @Override
     public int getId() throws ClassNotFoundException, SQLException {

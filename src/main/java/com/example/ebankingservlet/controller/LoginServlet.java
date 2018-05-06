@@ -22,16 +22,31 @@ public class LoginServlet extends HttpServlet {
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        if (request.getSession().getAttribute("username") != null) {
+            try {
+                String username = request.getAttribute("username").toString();
+                
+                String userRole = systemDAO.checkSession(username);
 
-        RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/index.jsp");
-        dispatcher.forward(request, response);
+                if (userRole != null && userRole.equalsIgnoreCase("admin")) {                    
+                    response.sendRedirect("admin");
+                } else if (userRole != null && userRole.equalsIgnoreCase("customer")) {                    
+                    response.sendRedirect("user");
+                }
+            } catch (Exception e) {
+
+            }
+        } else {
+            RequestDispatcher dispatcher = request.getRequestDispatcher("/WEB-INF/views/index.jsp");
+            dispatcher.forward(request, response);
+        }
     }
 
     @Override
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
         try {
-            String username = request.getParameter("username");            
+            String username = request.getParameter("username");
             String password = request.getParameter("password");
             String userRole = systemDAO.checkLogin(username, password);
 
