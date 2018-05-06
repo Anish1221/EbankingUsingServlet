@@ -8,6 +8,7 @@ com\example\ebankingservlet\dao\TransactionDAO.class
 com\example\ebankingservlet\dao\impl\SystemDAOImpl.class
 com\example\ebankingservlet\dao\impl\AdminDAOImpl.class
 com\example\ebankingservlet\dbutil\DbConnection.class
+com\example\ebankingservlet\controller\ErrorServlet.class
 com\example\ebankingservlet\dao\impl\TransactionDAOImpl.class
 com\example\ebankingservlet\controller\AdminAddAccountServlet.class
 com\example\ebankingservlet\entity\Transaction.class
@@ -23,6 +24,7 @@ com\example\ebankingservlet\entity\Customer.class
 com\example\ebankingservlet\entity\Admin.class
 com\example\ebankingservlet\controller\CustomerTransferServlet.class
 com\example\ebankingservlet\entity\Account.class
+com\example\ebankingservlet\filter\AccessFilter.class
 com\example\ebankingservlet\dao\AdminDAO.class
 com\example\ebankingservlet\dao\SystemDAO.class
 com\example\ebankingservlet\controller\LoginServlet.class

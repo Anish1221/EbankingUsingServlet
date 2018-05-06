@@ -16,14 +16,12 @@ import javax.servlet.http.HttpServletResponse;
  *
  * @author acer
  */
-@WebServlet(urlPatterns = "/admin")
-public class AdminServlet extends HttpServlet {
+@WebServlet(urlPatterns = "/error")
+public class ErrorServlet extends HttpServlet{
 
     @Override
-    protected void doGet(HttpServletRequest request, HttpServletResponse resp) throws ServletException, IOException {
-
-        request.getAttribute("username");
-        request.getRequestDispatcher("WEB-INF/views/admin/admin_home.jsp").forward(request, resp);
+    protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+        request.getRequestDispatcher("WEB-INF/shared/404error.jsp").forward(request, response);
     }
-
+    
 }

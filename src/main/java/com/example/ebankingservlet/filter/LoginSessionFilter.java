@@ -37,7 +37,6 @@ public class LoginSessionFilter implements Filter {
             fc.doFilter(sr, sr1);
         } else {
             request.getRequestDispatcher("index").forward(sr, sr1);
-            
         }
     }
 

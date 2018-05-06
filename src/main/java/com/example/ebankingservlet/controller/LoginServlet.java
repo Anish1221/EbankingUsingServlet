@@ -24,7 +24,7 @@ public class LoginServlet extends HttpServlet {
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         if (request.getSession().getAttribute("username") != null) {
             try {
-                String username = request.getAttribute("username").toString();
+                String username = request.getSession().getAttribute("username").toString();
                 
                 String userRole = systemDAO.checkSession(username);
 
